@@ -1,0 +1,182 @@
+<html>
+  <head> </head>
+
+  <body id="teste">
+    <header>
+      <h1>Titulo da Pagina</h1>
+    </header>
+    <article>
+      <h2>Operário no mar - Carlos Drummond de Andrade</h2>
+      Na rua passa um operário. Como vai firme! Não tem blusa. No conto, no drama, no discurso político, a dor do operário está na blusa azul, de pano grosso, nas mãos grossas, nos pés enormes, nos desconfortos enormes. Esse é um homem comum, apenas mais escuro que os outros, e com uma significação estranha no corpo, que carrega desígnios e segredos. Para onde vai ele, pisando assim tão firme?
+    </article>
+    <aside>
+      <form> 
+        <h2>Escolha a fonte</h2>
+        
+            <h3>Família da fonte</h3>
+            <input type="radio" id="arial" name="fav_language" value="arial" onchange="mudarFamiliaFonte(1)" />
+            <label for="arial">Arial</label><br />
+            <input type="radio" id="comic_sans" name="fav_language" value="comic_sans"  onchange="mudarFamiliaFonte(2)" />
+            <label for="comic_sans">Comic Sans</label><br />
+            <input type="radio" id="open_d" name="fav_language" value="open_d"  onchange="mudarFamiliaFonte(3)" />
+            <label for="open_d">Open Dyslexic</label><br />
+            <input type="radio" id="calibri" name="fav_language" value="Calibri" onchange="mudarFamiliaFonte(4)" />
+            <label for="calibri">Calibri</label><br />
+            <input type="radio" id="verdana" name="fav_language" value="Verdana" onchange="mudarFamiliaFonte(5)" />
+            <label for="verdana">Verdana</label><br />
+          
+          <h3>Tamanho da fonte</h3>
+          <input type="number" name="insere_fonte" id="insere_fonte" placeholder="18" value="18"> 
+          <input type="button" name="okay" id="okay" value="Ok" onclick="mudarTamFontePers()">
+          <br>
+        <input type="button" name="aumenta_fonte" value="A+" onclick="mudarTamFonte('maior')"/>
+        <input type="button" name="diminui_fonte" value="A-" onclick="mudarTamFonte('menor')"/>
+         
+        <h2>Escolha o espaçamento</h2>
+            <h3>Entre Linhas</h3>
+            <input value="1" name="entre_linhas" type="range" min="0.5" max="2" step="0.25" onchange="mudarEspLinhas()">
+            <label id="label_entre_linhas" for="entre_linhas"></label>
+
+            <h3>Entre Palavras</h3>
+
+            <input value="1" name="entre_pala" type="range" min="0.5" max="2" step="0.25" onchange="mudarEspPalavras()">
+            <label id="label_entre_pala" for="entre_pala"></label>
+            
+            <h3>Entre Caracteres</h3>
+
+            <input value="1" name="entre_carac" type="range" min="0.5" max="2" step="0.25" onchange="mudarEspCaracter()">
+            <label id="label_entre_carac" for="entre_carac"></label>
+      </form>
+    </aside>
+    <section id="configs" >
+        <h2>Configurações:</h2>
+        <h3>Fonte</h3>
+        <p id='config_font' ></p>
+        <p id='config_font_size'></p>
+        
+        <h3>Espaçamento</h3>
+        <p id='config_esp_linhas'></p>
+        <p id='config_esp_palavras'></p>
+        <p id='config_esp_carac'></p>
+    </section>
+  </body>
+  <!-- 
+  <footer>
+    <h5>
+      Disclaimer: Importante pontuar que os benefícios dessa fonte tem sido
+      questionados em estudos científicos. Rello e Baeza-Yates (2013) mediram
+      gravações de rastreamento ocular de leitores espanhóis de 11 a 50 anos com
+      dislexia e descobriram que o OpenDyslexic não melhorou significativamente
+      o tempo de leitura nem contribuiu para a fixação ocular, os estudos de
+      Wery e Diliberto (2016) também não encontraram melhora na taxa ou precisão
+      de leitura para estudantes com dislexia ao ler a fonte OpenDyslexic em
+      comparação com Arial e Times New Roman. É difícil afirmar que exista uma
+      fonte que realmente cumpra a promessa de melhorar o processo de leitura,
+      pois segundo Kuester et. Al (2018) dados sugerem que a fonte que uma
+      criança prefere é provavelmente mais eficaz para ela.
+    </h5>
+  </footer> -->
+</html>
+
+<style>
+
+@font-face { font-family: Dyslexia; src: url('OpenDyslexic-Regular.otf'); } 
+
+  header {
+    background-color: #ccc;
+  }
+  article {
+    float: left;
+    width: 50%;
+    margin-right: 10px;
+  }
+  aside {
+    float: left;
+    width: 25%;
+  }
+  body {
+    background-color: #eee;
+    font-size: 18px;
+  }
+  input{
+      margin-top: 5px;
+  }
+  form {
+      margin-top: 0;
+  }
+</style>
+
+<script>
+
+    var tamFont = 18; 
+
+    function mudarFamiliaFonte(id){
+        if(id == 1 ){
+          document.getElementsByTagName("body")[0].style.fontFamily = 'Arial';
+          document.getElementById('config_font').innerHTML = 'Arial';
+        }
+        if(id == 2 ){
+          document.getElementsByTagName("body")[0].style.fontFamily = "Comic Sans MS", "Comic Sans", cursive;
+          document.getElementById('config_font').innerHTML = "Comic Sans";
+        }
+        if(id == 3 ){
+          document.getElementsByTagName("body")[0].style.fontFamily = 'Dyslexia';
+          document.getElementById('config_font').innerHTML = 'Dyslexia';
+        }
+        if(id == 4 ){
+          document.getElementsByTagName("body")[0].style.fontFamily = 'Calibri';
+          document.getElementById('config_font').innerHTML = 'Calibri';
+        }
+        if(id == 5 ){
+          document.getElementsByTagName("body")[0].style.fontFamily = 'Verdana';
+          document.getElementById('config_font').innerHTML = 'Verdana';
+        }
+    }
+
+    function mudarTamFonte(id){
+      if(id == 'maior' ){
+          tamFont ++;
+          document.getElementsByTagName("body")[0].style.fontSize = tamFont;
+          document.getElementById("insere_fonte").value = tamFont;
+        }
+
+        if(id == 'menor' ){
+          tamFont --;
+          document.getElementsByTagName("body")[0].style.fontSize = tamFont;
+          document.getElementById("insere_fonte").value = tamFont;
+        }
+        
+        document.getElementById('config_font_size').innerHTML = tamFont+'px';
+
+    }
+
+    function mudarTamFontePers(){
+          tamFont = document.getElementById("insere_fonte").value;
+          document.getElementById("insere_fonte").value = tamFont;
+          document.getElementsByTagName("body")[0].style.fontSize = tamFont;
+          
+        document.getElementById('config_font_size').innerHTML = tamFont+'px';
+    }
+
+    function mudarEspLinhas(){
+      document.getElementsByTagName("body")[0].style.lineHeight = document.getElementsByName("entre_linhas")[0].value;
+      document.getElementById("label_entre_linhas").innerHTML = document.getElementsByName("entre_linhas")[0].value;    
+      document.getElementById('config_esp_linhas').innerHTML = document.getElementsByName("entre_linhas")[0].value; 
+          
+    }
+
+    function mudarEspCaracter(){
+
+      document.getElementsByTagName("body")[0].style.letterSpacing = document.getElementsByName("entre_carac")[0].value;
+          document.getElementById("label_entre_carac").innerHTML = document.getElementsByName("entre_carac")[0].value; 
+      document.getElementById('config_esp_carac').innerHTML = document.getElementsByName("entre_linhas")[0].value; 
+    }
+    
+    function mudarEspPalavras(){
+
+      document.getElementsByTagName("body")[0].style.wordSpacing = document.getElementsByName("entre_pala")[0].value;
+          document.getElementById("label_entre_pala").innerHTML = document.getElementsByName("entre_pala")[0].value; 
+      document.getElementById('config_esp_palavras').innerHTML = document.getElementsByName("entre_linhas")[0].value; 
+    }
+
+</script>
