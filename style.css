@@ -1,0 +1,15 @@
+@font-face { font-family: Dyslexia; src: url('OpenDyslexic-Regular.otf'); } 
+
+body {
+background-color: #eee;
+font-size: 16px;
+font-family: Arial;
+}
+
+article,p {
+    font-size: inherit;
+}
+
+form {
+    margin-top: 0;
+}

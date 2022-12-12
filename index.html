@@ -1,182 +1,116 @@
-<html>
-  <head><meta charset="UTF-8"> </head>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">   
+    <meta name="keywords" content="dislexia, fontes, inclusão digital, acessibilidade">
+    <meta name="author" content="João Severo, Isis Alvarez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body id="teste">
-    <header>
-      <h1>Padrões de página para pessoas com dislexia</h1>
+    <!-- CSS Próprio -->
+    <link rel="stylesheet" href="style.css"> 
+    <!-- JS Próprio -->
+    <script src="app.js"></script> 
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Dislexia - Formatação de texto</title>
+  </head>
+
+  <body class="row">
+    <header class="container-fluid p-5 col-12 bg-light">
+      <h1>Formatação de Texto para Dislexia</h1>
     </header>
-    <article>
-      <h2>Operário no mar - Carlos Drummond de Andrade</h2>
-      Na rua passa um operário. Como vai firme! Não tem blusa. No conto, no drama, no discurso político, a dor do operário está na blusa azul, de pano grosso, nas mãos grossas, nos pés enormes, nos desconfortos enormes. Esse é um homem comum, apenas mais escuro que os outros, e com uma significação estranha no corpo, que carrega desígnios e segredos. Para onde vai ele, pisando assim tão firme?
+
+    <article class="p-3 col-6">
+      <h2 class="mt-3 mb-3 text-center">Operário no mar - Carlos Drummond de Andrade</h2>
+      Na rua passa um operário. Como vai firme! Não tem blusa. 
+      No conto, no drama, no discurso político, a dor do operário está na blusa azul, de pano grosso, nas mãos grossas, nos pés enormes, nos desconfortos enormes. 
+      Esse é um homem comum, apenas mais escuro que os outros, e com uma significação estranha no corpo, que carrega desígnios e segredos. 
+      Para onde vai ele, pisando assim tão firme? Não sei. A fábrica ficou lá atrás. 
+      Adiante é só o campo, com algumas árvores, o grande anúncio de gasolina americana e os fios, os fios, os fios. 
+      O operário não lhe sobra tempo de perceber que eles levam e trazem mensagens, que contam da Rússia, do Araguaia, dos Estados Unidos. 
+      Não ouve, na Câmara dos Deputados, o líder oposicionista vociferando. Caminha no campo e apenas repara que ali corre água, que mais adiante faz calor.
+      Para onde vai o operário? Teria vergonha de chamá-lo meu irmão. Ele sabe que não é, nunca foi meu irmão, que não nos entenderemos nunca. 
+      E me despreza… Ou talvez seja eu próprio que me despreze a seus olhos. 
+      Tenho vergonha e vontade de encará-lo: uma fascinação quase me obriga a pular a janela, a cair em frente dele, sustar-lhe a marcha, pelo menos implorar lhe que suste a marcha. 
+      Agora está caminhando no mar. Eu pensava que isso fosse privilégio de alguns santos e de navios. 
+      Mas não há nenhuma santidade no operário, e não vejo rodas nem hélices no seu corpo, aparentemente banal. 
+      Sinto que o mar se acovardou e deixou-o passar. 
+      Onde estão nossos exércitos que não impediram o milagre? Mas agora vejo que o operário está cansado e que se molhou, não muito, mas se molhou, e peixes escorrem de suas mãos. 
+      Vejo-o que se volta e me dirige um sorriso úmido. A palidez e confusão do seu rosto são a própria tarde que se decompõe. 
+      Daqui a um minuto será noite e estaremos irremediavelmente separados pelas circunstâncias atmosféricas, eu em terra firme, ele no meio do mar. 
+      Único e precário agente de ligação entre nós, seu sorriso cada vez mais frio atravessa as grandes massas líquidas, choca-se contra as formações salinas, 
+      as fortalezas da costa, as medusas, atravessa tudo e vem beijar-me o rosto, trazer-me uma esperança de compreensão. 
+      Sim, quem sabe se um dia o compreenderei?
     </article>
-    <aside>
+
+    <section class="p-3 col-3">
       <form> 
         <h2>Escolha a fonte</h2>
         
-            <h3>Família da fonte</h3>
-            <input type="radio" id="arial" name="fav_language" value="arial" onchange="mudarFamiliaFonte(1)" />
-            <label for="arial">Arial</label><br />
-            <input type="radio" id="comic_sans" name="fav_language" value="comic_sans"  onchange="mudarFamiliaFonte(2)" />
-            <label for="comic_sans">Comic Sans</label><br />
-            <input type="radio" id="open_d" name="fav_language" value="open_d"  onchange="mudarFamiliaFonte(3)" />
-            <label for="open_d">Open Dyslexic</label><br />
-            <input type="radio" id="calibri" name="fav_language" value="Calibri" onchange="mudarFamiliaFonte(4)" />
-            <label for="calibri">Calibri</label><br />
-            <input type="radio" id="verdana" name="fav_language" value="Verdana" onchange="mudarFamiliaFonte(5)" />
-            <label for="verdana">Verdana</label><br />
-          
-          <h3>Tamanho da fonte</h3>
-          <input type="number" name="insere_fonte" id="insere_fonte" placeholder="18" value="18"> 
-          <input type="button" name="okay" id="okay" value="Ok" onclick="mudarTamFontePers()">
-          <br>
-        <input type="button" name="aumenta_fonte" value="A+" onclick="mudarTamFonte('maior')"/>
-        <input type="button" name="diminui_fonte" value="A-" onclick="mudarTamFonte('menor')"/>
-         
+        <h3>Família da fonte</h3>
+        <input type="radio" id="arial" name="fav_language" value="arial" onchange="mudarFamiliaFonte(1)" checked>
+        <label for="arial">Arial</label><br>
+        <input type="radio" id="comic_sans" name="fav_language" value="comic_sans"  onchange="mudarFamiliaFonte(2)">
+        <label for="comic_sans">Comic Sans</label><br>
+        <input type="radio" id="open_d" name="fav_language" value="open_d"  onchange="mudarFamiliaFonte(3)">
+        <label for="open_d">Open Dyslexic</label><br>
+        <input type="radio" id="calibri" name="fav_language" value="Calibri" onchange="mudarFamiliaFonte(4)">
+        <label for="calibri">Calibri</label><br>
+        <input type="radio" id="verdana" name="fav_language" value="Verdana" onchange="mudarFamiliaFonte(5)">
+        <label for="verdana">Verdana</label><br>
+      
+        <h3>Tamanho da fonte</h3>
+        <input type="number" name="insere_fonte" id="insere_fonte" placeholder="16" value="16"> 
+        <input type="button" name="okay" id="okay" value="Ok" onclick="mudarTamFontePers()">
+        <div class="mt-2 mb-2">
+          <input type="button" name="aumenta_fonte" value="A+" onclick="mudarTamFonte('maior')">
+          <input type="button" name="diminui_fonte" value="A-" onclick="mudarTamFonte('menor')">
+        </div>
+
         <h2>Escolha o espaçamento</h2>
-            <h3>Entre Linhas</h3>
-            <input value="1" name="entre_linhas" type="range" min="0.5" max="2" step="0.25" onchange="mudarEspLinhas()">
-            <label id="label_entre_linhas" for="entre_linhas"></label>
 
-            <h3>Entre Palavras</h3>
+        <h3>Entre Linhas</h3>
+        <input value="1.5" name="entre_linhas" type="range" min="1" max="2" step="0.25" onchange="mudarEspLinhas()">
+        <label id="label_entre_linhas" for="entre_linhas"></label>
 
-            <input value="1" name="entre_pala" type="range" min="0.5" max="2" step="0.25" onchange="mudarEspPalavras()">
-            <label id="label_entre_pala" for="entre_pala"></label>
-            
-            <h3>Entre Caracteres</h3>
+        <h3>Entre Palavras</h3>
 
-            <input value="1" name="entre_carac" type="range" min="0.5" max="2" step="0.25" onchange="mudarEspCaracter()">
-            <label id="label_entre_carac" for="entre_carac"></label>
+        <input value="0" name="entre_pala" type="range" min="0" max="20" step="1" onchange="mudarEspPalavras()">
+        <label id="label_entre_pala" for="entre_pala"></label>
+        
+        <h3>Entre Caracteres</h3>
+
+        <input value="0" name="entre_carac" type="range" min="0" max="2" step="0.25" onchange="mudarEspCaracter()">
+        <label id="label_entre_carac" for="entre_carac"></label>
       </form>
-    </aside>
-    <section id="configs" >
+    </section>
+    <section id="configs" class="p-3 col-3">
         <h2>Configurações:</h2>
         <h3>Fonte</h3>
-        <p id='config_font' ></p>
-        <p id='config_font_size'></p>
+        <p>Família: <span id='config_font' >Arial</span></p>
+        <p>Tamanho: <span id='config_font_size'>16px</span></p>
         
         <h3>Espaçamento</h3>
-        <p id='config_esp_linhas'></p>
-        <p id='config_esp_palavras'></p>
-        <p id='config_esp_carac'></p>
+        <p>Entre linhas: <span id='config_esp_linhas'>1.5</span></p>
+        <p>Entre palavras: <span id='config_esp_palavras'>0</span></p>
+        <p>Entre caracteres: <span id='config_esp_carac'>0</span></p>
     </section>
+    <footer class="container-fluid p-5 bg-light">
+      <h4 class="small">
+        Disclaimer: Importante pontuar que os benefícios dessa fonte tem sido
+        questionados em estudos científicos. Rello e Baeza-Yates (2013) mediram
+        gravações de rastreamento ocular de leitores espanhóis de 11 a 50 anos com
+        dislexia e descobriram que o OpenDyslexic não melhorou significativamente
+        o tempo de leitura nem contribuiu para a fixação ocular, os estudos de
+        Wery e Diliberto (2016) também não encontraram melhora na taxa ou precisão
+        de leitura para estudantes com dislexia ao ler a fonte OpenDyslexic em
+        comparação com Arial e Times New Roman. É difícil afirmar que exista uma
+        fonte que realmente cumpra a promessa de melhorar o processo de leitura,
+        pois segundo Kuester et. Al (2018) dados sugerem que a fonte que uma
+        criança prefere é provavelmente mais eficaz para ela.
+      </h4>
+    </footer>
   </body>
-  <!-- 
-  <footer>
-    <h5>
-      Disclaimer: Importante pontuar que os benefícios dessa fonte tem sido
-      questionados em estudos científicos. Rello e Baeza-Yates (2013) mediram
-      gravações de rastreamento ocular de leitores espanhóis de 11 a 50 anos com
-      dislexia e descobriram que o OpenDyslexic não melhorou significativamente
-      o tempo de leitura nem contribuiu para a fixação ocular, os estudos de
-      Wery e Diliberto (2016) também não encontraram melhora na taxa ou precisão
-      de leitura para estudantes com dislexia ao ler a fonte OpenDyslexic em
-      comparação com Arial e Times New Roman. É difícil afirmar que exista uma
-      fonte que realmente cumpra a promessa de melhorar o processo de leitura,
-      pois segundo Kuester et. Al (2018) dados sugerem que a fonte que uma
-      criança prefere é provavelmente mais eficaz para ela.
-    </h5>
-  </footer> -->
 </html>
-
-<style>
-
-@font-face { font-family: Dyslexia; src: url('OpenDyslexic-Regular.otf'); } 
-
-  header {
-    background-color: #ccc;
-  }
-  article {
-    float: left;
-    width: 50%;
-    margin-right: 10px;
-  }
-  aside {
-    float: left;
-    width: 25%;
-  }
-  body {
-    background-color: #eee;
-    font-size: 18px;
-  }
-  input{
-      margin-top: 5px;
-  }
-  form {
-      margin-top: 0;
-  }
-</style>
-
-<script>
-
-    var tamFont = 18; 
-
-    function mudarFamiliaFonte(id){
-        if(id == 1 ){
-          document.getElementsByTagName("body")[0].style.fontFamily = 'Arial';
-          document.getElementById('config_font').innerHTML = 'Arial';
-        }
-        if(id == 2 ){
-          document.getElementsByTagName("body")[0].style.fontFamily = "Comic Sans MS", "Comic Sans", cursive;
-          document.getElementById('config_font').innerHTML = "Comic Sans";
-        }
-        if(id == 3 ){
-          document.getElementsByTagName("body")[0].style.fontFamily = 'Dyslexia';
-          document.getElementById('config_font').innerHTML = 'Dyslexia';
-        }
-        if(id == 4 ){
-          document.getElementsByTagName("body")[0].style.fontFamily = 'Calibri';
-          document.getElementById('config_font').innerHTML = 'Calibri';
-        }
-        if(id == 5 ){
-          document.getElementsByTagName("body")[0].style.fontFamily = 'Verdana';
-          document.getElementById('config_font').innerHTML = 'Verdana';
-        }
-    }
-
-    function mudarTamFonte(id){
-      if(id == 'maior' ){
-          tamFont ++;
-          document.getElementsByTagName("body")[0].style.fontSize = tamFont;
-          document.getElementById("insere_fonte").value = tamFont;
-        }
-
-        if(id == 'menor' ){
-          tamFont --;
-          document.getElementsByTagName("body")[0].style.fontSize = tamFont;
-          document.getElementById("insere_fonte").value = tamFont;
-        }
-        
-        document.getElementById('config_font_size').innerHTML = tamFont+'px';
-
-    }
-
-    function mudarTamFontePers(){
-          tamFont = document.getElementById("insere_fonte").value;
-          document.getElementById("insere_fonte").value = tamFont;
-          document.getElementsByTagName("body")[0].style.fontSize = tamFont;
-          
-        document.getElementById('config_font_size').innerHTML = tamFont+'px';
-    }
-
-    function mudarEspLinhas(){
-      document.getElementsByTagName("body")[0].style.lineHeight = document.getElementsByName("entre_linhas")[0].value;
-      document.getElementById("label_entre_linhas").innerHTML = document.getElementsByName("entre_linhas")[0].value;    
-      document.getElementById('config_esp_linhas').innerHTML = document.getElementsByName("entre_linhas")[0].value; 
-          
-    }
-
-    function mudarEspCaracter(){
-
-      document.getElementsByTagName("body")[0].style.letterSpacing = document.getElementsByName("entre_carac")[0].value;
-          document.getElementById("label_entre_carac").innerHTML = document.getElementsByName("entre_carac")[0].value; 
-      document.getElementById('config_esp_carac').innerHTML = document.getElementsByName("entre_carac")[0].value; 
-    }
-    
-    function mudarEspPalavras(){
-
-      document.getElementsByTagName("body")[0].style.wordSpacing = document.getElementsByName("entre_pala")[0].value;
-      document.getElementById("label_entre_pala").innerHTML = document.getElementsByName("entre_pala")[0].value; 
-      document.getElementById('config_esp_palavras').innerHTML = document.getElementsByName("entre_pala")[0].value; 
-    }
-
-</script>
